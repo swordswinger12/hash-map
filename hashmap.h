@@ -46,8 +46,10 @@ class HashMap{
 	//Array of buckets, the size of the array is numberOfBuckets
 	Bucket *buckets;
 };
-
+/**
+ *@note This class is a functor which takes the key of an element, hashes it according to a TBD hash function, and returns its value mod the number of buckets.
+ */
 class HashFunctor{
 	HashFunctor();
-	uint32_t operator()(uint32_t key);
+	virtual uint32_t operator()(uint32_t key);
 };
