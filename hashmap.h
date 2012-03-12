@@ -48,6 +48,9 @@ class HashMap{
 };
 /**
  *@note This class is a functor which takes the key of an element, hashes it according to a TBD hash function, and returns its value mod the number of buckets.
+ *@note I think hashing will happen like this: The key is given as input to some hash function, preferably something handrolled. This results in (probably) an array of 32 bytes which represents the value of the hash. Then, the least significant 4 bytes are pulled out as a uint32_t and ANDed with the number of buckets, which will compute the value of the hash mod the number of buckets by a simple property of bitwise ops. This will be the index into the bucket array.
+ *@note This isn't the most efficient way to do this, not by a long shot. It's good practice though, and I need to implement another hash function for research anyway.
+ *@bug This will only work if the number of buckets is less than ~4 billion, otherwise the above procedure will lose precision of the highest-order bits of the number of buckets.
  */
 class HashFunctor{
 	HashFunctor();
