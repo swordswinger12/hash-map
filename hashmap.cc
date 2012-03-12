@@ -43,3 +43,9 @@ bool HashMap::removeElement(uint32_t key){
 	std::cout << "in removeelement" << std::endl;
 	return true;
 }
+
+uint32_t HashFunctor::operator()(uint32_t key)
+{
+	std::cout << "in operator ()" << std::endl;
+	return 0;
+}
