@@ -1,1 +1,2 @@
-This is a simple handrolled implementation of a hash map which I'm writing mostly for my own edification. It doesn't really have a license, so use away.
+This is a simple handrolled implementation of a hash map which I'm writing mostly for my own edification. It doesn't really have a license, so use away. 
+Basically just type 'make' and then ./hashmap to run it, assuming your c++ and g++ are set up correctly. It doesn't have cmdline args or anything yet, and it might never. This will be very barebones.
