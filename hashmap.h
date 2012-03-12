@@ -9,6 +9,9 @@
 
 typedef std::list<std::pair<uint32_t, uint32_t> >* ElementListPtr;
 typedef std::list<std::pair<uint32_t, uint32_t> > ElementList;
+/**
+ *@note this is the bucket class, which will hold a list of elements whose keys are equal mod the number of buckets.
+ */
 class Bucket{
  public:
 	const ElementListPtr getElementList(void) const;
@@ -42,4 +45,9 @@ class HashMap{
 	uint32_t m_numberOfBuckets;
 	//Array of buckets, the size of the array is numberOfBuckets
 	Bucket *buckets;
+};
+
+class HashFunctor{
+	HashFunctor();
+	uint32_t operator()(uint32_t key);
 };
